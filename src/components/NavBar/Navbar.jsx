@@ -33,7 +33,9 @@ function Navbar() {
 </Navbar>
         </div>
     )
-}
+};
+
+Navbar();
 
 export default Navbar
 

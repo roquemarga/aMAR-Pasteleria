@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ItemListContainer';
+import Navbar from './components/NavBar/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
+      <ItemListContainer greeting= "Hola! Bienvenido a MAR - Indumentaria"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
