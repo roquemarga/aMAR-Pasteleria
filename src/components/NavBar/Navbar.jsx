@@ -1,41 +1,45 @@
-import React from 'react'
+import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
 
-function Navbar() {
+function Navbar2() {
     return (
         <div>
-            <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#">MAR - Indumentaria</Navbar.Brand>
-  <Navbar.Toggle aria-controls="navbarScroll" />
-  <Navbar.Collapse id="navbarScroll">
-    <Nav
-      className="mr-auto my-2 my-lg-0"
-      style={{ maxHeight: '100px' }}
-      navbarScroll
-    >
-      <Nav.Link href="#action1">Inicio</Nav.Link>
-      <Nav.Link href="#action2">Zapatillas</Nav.Link>
-      <NavDropdown title="Ropa" id="navbarScrollingDropdown">
-        <NavDropdown.Item href="#action3">Remeras</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Buzos</NavDropdown.Item>
-        <NavDropdown.Item href="#action5">Jeans</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Form className="d-flex">
-      <FormControl
-        type="search"
-        placeholder="Buscar"
-        className="mr-2"
-        aria-label="Search"
-      />
-      <Button variant="outline-success">Buscar</Button>
-    </Form>
-  </Navbar.Collapse>
-</Navbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">- MAR - Indumentaria</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Indumentaria
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Remeras</a>
+          <a class="dropdown-item" href="#">Musculosas</a>
+          <a class="dropdown-item" href="#">Buzos</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cómo comprar?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Carrito</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
         </div>
     )
 };
 
-Navbar();
 
-export default Navbar
+
+
+export default Navbar2;
 
