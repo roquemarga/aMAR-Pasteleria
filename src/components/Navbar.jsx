@@ -11,24 +11,28 @@ function NavBar() {
         <div>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home">aMAR </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
-                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <Nav.Link href="#home">Inicio</Nav.Link>
+                            <Nav.Link href="#link">Dónde estamos?</Nav.Link>
+                                <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.2">Tortas</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3">Pattiserie</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.4">Alfajores</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.5">Cookies</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.6">Budines</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.7">Bombones</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.8">Macarons</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                                 </NavDropdown>
+                                <CartWidget/>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <CartWidget/>
         </div>
     )
 }

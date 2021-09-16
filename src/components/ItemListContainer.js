@@ -9,7 +9,7 @@ function ItemListContainer({greeting}) {
 
     const onAdd = (cantidad) => {
         setCantidad(cantidad)
-        console.log(cantidad, "En el carrito");
+        console.log(cantidad, "en el carrito");
     }
     return (
         <div>
