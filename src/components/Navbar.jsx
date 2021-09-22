@@ -26,7 +26,9 @@ function NavBar() {
                                     <Link exact to="/categoria/tartas">
                                         <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
                                     </Link>
-                                    <NavDropdown.Item href="#action/3.2">Tortas</NavDropdown.Item>
+                                    <Link exact to="/categoria/tortas">
+                                        <NavDropdown.Item href="#action/3.2">Tortas</NavDropdown.Item>
+                                    </Link>
                                     <NavDropdown.Item href="#action/3.3">Pattiserie</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.4">Alfajores</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.5">Cookies</NavDropdown.Item>
