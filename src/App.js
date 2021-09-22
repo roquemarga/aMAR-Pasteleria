@@ -8,11 +8,21 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting= {"Hola! Bienvenido a aMAR - Pastelería"}/>
-      <ItemDetailContainer />
-    </div>
+    <BrowserRouter>     
+      <div className="App">
+
+        <NavBar/>
+
+          <Switch>
+
+            <Route exact path= "/">
+              <ItemListContainer greeting= {"Hola! Bienvenido a aMAR - Pastelería"}/>
+            </Route>
+            <Route exact path="/detalle" component= {ItemDetailContainer} />
+
+          </Switch>
+      </div>
+    </BrowserRouter>
   );
 };
 
