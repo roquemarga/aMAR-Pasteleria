@@ -4,6 +4,7 @@ import {useState} from "react"
 import {fetch} from "./Productos"
 import ItemList from './ItemList'
 import { useEffect } from 'react'
+import {useParams} from "react-router-dom"
 
 function ItemListContainer({greeting}) {
 
@@ -11,20 +12,35 @@ function ItemListContainer({greeting}) {
 
     const [loading, setLoading] = useState(true)
 
+    const {idCategoria} = useParams()
+
     
     console.log(productos)
     
     useEffect(() => {
-        fetch
-        .then(respuesta => {
-            setProductos(respuesta)
 
-        })
-        .catch(error => console.log(error))
-        .finally(()=> setLoading(false))
-        
-    }, [])
+        if(idCategoria) {
+            fetch
+            .then(respuesta => {
+                setProductos(respuesta.filter (prod => prod.categoria === idCategoria))
     
+            })
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false))
+
+        }else{
+            fetch
+            .then(respuesta => {
+                setProductos(respuesta)
+    
+            })
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false))
+
+        }
+        
+    }, [idCategoria])
+        
     const [cantidad, setCantidad] = useState(0);
     
     const onAdd = (cantidad) => {
