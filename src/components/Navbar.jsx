@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Link } from 'react-router-dom'
 
 
 function NavBar() {
@@ -11,14 +12,20 @@ function NavBar() {
         <div>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">aMAR </Navbar.Brand>
+                        <Link exact to="/">
+                            <Navbar.Brand href="#home">aMAR </Navbar.Brand>
+                        </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Inicio</Nav.Link>
+                            <Link exact to="/">
+                                <Nav.Link href="#home" >Inicio</Nav.Link>
+                            </Link>
                             <Nav.Link href="#link">Dónde estamos?</Nav.Link>
                                 <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
+                                    <Link exact to="/categoria/tartas">
+                                        <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
+                                    </Link>
                                     <NavDropdown.Item href="#action/3.2">Tortas</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Pattiserie</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.4">Alfajores</NavDropdown.Item>

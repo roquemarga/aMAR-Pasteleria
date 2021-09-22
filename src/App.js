@@ -18,6 +18,9 @@ function App() {
             <Route exact path= "/">
               <ItemListContainer greeting= {"Hola! Bienvenido a aMAR - Pastelería"}/>
             </Route>
+
+            <Route exact path="/categoria/:idCategoria" component={ItemListContainer}/>
+
             <Route exact path="/detalle" component= {ItemDetailContainer} />
 
           </Switch>
