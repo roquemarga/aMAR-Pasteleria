@@ -13,7 +13,7 @@ export const fetch = new Promise ((resolve) => {
 })
 
 
-const producto = {id: 12, categoria: "tartas", nombre: "lemon pie", descrip: "Base de masa sablee, relleno de limon y en su cubierta merengue italiano", precio:"$2000", foto: "http://3.bp.blogspot.com/-w85a3FA59yA/Vk3HiZUIMyI/AAAAAAAAAHI/-5NJZi1eFJA/s1600/blog1.png"}
+const producto = {id: 12, categoria: "tartas", nombre: "Lemon pie", descrip: "Base de masa sablee, relleno de limon y en su cubierta merengue italiano", precio:"$2000", foto: "http://3.bp.blogspot.com/-w85a3FA59yA/Vk3HiZUIMyI/AAAAAAAAAHI/-5NJZi1eFJA/s1600/blog1.png"}
 
 
 export const fetchProducto = new Promise ((resolve) => {

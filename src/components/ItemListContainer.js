@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemCount from './ItemCount'
 import {useState} from "react"
 import {fetch} from "./Productos"
 import ItemList from './ItemList'
@@ -14,8 +13,6 @@ function ItemListContainer({greeting}) {
 
     const {idCategoria} = useParams()
 
-    
-    console.log(productos)
     
     useEffect(() => {
 
@@ -41,18 +38,13 @@ function ItemListContainer({greeting}) {
         
     }, [idCategoria])
         
-    const [cantidad, setCantidad] = useState(0);
-    
-    const onAdd = (cantidad) => {
-        setCantidad(cantidad)
-        console.log(cantidad, "en el carrito");
-    }
+    console.log(idCategoria)
+
     
     return (
         <div>
             <h2>{greeting}</h2>
             {loading ? <div>Cargando</div> : <ItemList productos={productos} />}
-            <ItemCount stock={12} initial={1} onAdd={onAdd} />
         </div>
     )
 }

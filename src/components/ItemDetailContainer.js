@@ -1,22 +1,21 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { fetchProducto } from './Productos'
 import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState([])
+    const [producto, setProducto] = useState({})
 
     useEffect(() => {
 
-        fetchProducto
-        .then(resp => setItem(resp))
+        fetchProducto()
+        .then(resp => setProducto(resp))
 
     }, [])
 
     return (
         <div>
-            <ItemDetail item={item} />
+            <ItemDetail key={producto.id} producto={producto} />
         </div>
     )
 }
