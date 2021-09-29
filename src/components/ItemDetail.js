@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from "react"
+import { ContextApp } from '../App';
 import ItemCount from './ItemCount';
 
 
@@ -12,10 +13,12 @@ const ItemDetail= ({producto}) => {
         console.log(cantidad, "en el carrito");
     }
 
-    
+    const {state} = useContext(ContextApp)
+
 
     return (
         <div>
+            
             <img src= {producto.foto} style={{ height: 300, weith: 150 }} alt="foto" className= "w-30 h-30"/>
             <h2>{producto.nombre}</h2>
             <h4>{producto.descrip}</h4>
