@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function ItemCount({stock, initial, onAdd}) {
 
-    const [cantidad, setCantidad] = useState(initial);
+    const [cantidad, setCantidad] = useState(parseInt(initial));
     const [cambiarBoton, setCambiarBoton] = useState(true);
 
 
@@ -39,7 +39,7 @@ function ItemCount({stock, initial, onAdd}) {
             <Button variant="info" size="sm" onClick = {agregarCarrito}>Agregar al carrito</Button>
             :
             <div>
-                <Link to= "/Cart">
+                <Link to= "/cart">
                     <Button variant="info" size="sm">Terminar compra</Button>
                 </Link>
                 <Link to= "/">

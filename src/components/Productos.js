@@ -6,7 +6,7 @@ const productos = [ {id: 11, categoria: "tartas", nombre: "Havannet con choco bl
 
 ]
 
-export const fetch = new Promise ((resolve) => {
+export const fetchProductos = new Promise ((resolve) => {
         setTimeout(() => {
             resolve(productos)
         }, 2000) 

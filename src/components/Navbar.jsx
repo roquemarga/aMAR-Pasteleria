@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Link } from 'react-router-dom'
 
 
-function NavBar(props) {
+function NavBar (props) {
 
     const {cantidad} = props
 

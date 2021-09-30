@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from "react"
-import {fetch} from "./Productos"
+import {fetchProductos} from "./Productos"
 import ItemList from './ItemList'
 import { useEffect } from 'react'
 import {useParams} from "react-router-dom"
@@ -17,7 +17,7 @@ function ItemListContainer({greeting}) {
     useEffect(() => {
 
         if(idCategoria) {
-            fetch
+            fetchProductos
             .then(respuesta => {
                 setProductos(respuesta.filter (prod => prod.categoria === idCategoria))
     
@@ -26,7 +26,7 @@ function ItemListContainer({greeting}) {
             .finally(()=> setLoading(false))
 
         }else{
-            fetch
+            fetchProductos
             .then(respuesta => {
                 setProductos(respuesta)
     

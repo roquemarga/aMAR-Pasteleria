@@ -1,10 +1,10 @@
 import ItemListContainer from './components/ItemListContainer'
-import NavBar from './components/Navbar'
-import {BrowserRouter, Switch, Route} from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer'
+import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Cart from './components/Cart'
 import { useState, createContext } from 'react'
 import CartContextProvider from './context/cartContext'
+import NavBar from "./components/Navbar"
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'

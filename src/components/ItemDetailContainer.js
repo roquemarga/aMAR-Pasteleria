@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { fetchProducto } from './Productos'
 import ItemDetail from './ItemDetail'
-// import { useParams } from 'react-router'
+
 
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
 
     // const [loading, setLoading] = useState(true)
-
-
-
     useEffect(() => {
-
-        fetchProducto()
-        .then(resp => setProducto(resp))
-
+        fetchProducto
+        .then (resp => setProducto(resp))
+    
     }, [])
 
 
@@ -45,7 +41,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail key= {producto.id} producto={producto} />
+            <ItemDetail key= {producto} producto={producto} />
         </div>
     )
 }
