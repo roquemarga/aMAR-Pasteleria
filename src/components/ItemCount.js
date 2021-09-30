@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +11,7 @@ function ItemCount({stock, initial, onAdd}) {
 
 
     function sumar () {
-        if(cantidad<12){
+        if(cantidad<stock){
         setCantidad(cantidad + 1)
         }
     } 
@@ -22,7 +23,7 @@ function ItemCount({stock, initial, onAdd}) {
     }
 
     const agregarCarrito = () => {
-        if(cantidad<=12){
+        if(cantidad<=stock){
         onAdd(cantidad)
         setCambiarBoton(false)
         }
@@ -37,10 +38,17 @@ function ItemCount({stock, initial, onAdd}) {
 
             <Button variant="info" size="sm" onClick = {agregarCarrito}>Agregar al carrito</Button>
             :
-            <Button variant="info" size="sm">Terminar compra</Button>
+            <div>
+                <Link to= "/Cart">
+                    <Button variant="info" size="sm">Terminar compra</Button>
+                </Link>
+                <Link to= "/">
+                    <Button variant="info" size="sm" onClick={sumar}>+</Button>
+                </Link>
+            </div>
             }
-            <Button variant="info" size="sm" onClick={sumar}>+</Button>
         </div>
+        
     )
 }
 

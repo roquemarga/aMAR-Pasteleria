@@ -1,8 +1,12 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
-function CartWidget() {
+function CartWidget({cantidad}) {
     return (
-        <> <a href="#"><img style={{width: "25px"}} src="https://cdn-icons-png.flaticon.com/512/2890/2890766.png" alt="" /></a>
+        <> <Link to= "/Cart">
+            {cantidad}
+            <img style={{width: "25px"}} src="https://cdn-icons-png.flaticon.com/512/2890/2890766.png" alt="carrito de compras" />
+            </Link>
         </>
     )
 }

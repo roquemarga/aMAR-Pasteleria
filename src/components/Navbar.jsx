@@ -7,7 +7,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Link } from 'react-router-dom'
 
 
-function NavBar() {
+function NavBar(props) {
+
+    const {cantidad} = props
+
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -21,7 +24,7 @@ function NavBar() {
                             <Link exact to="/">
                                 <Nav.Link href="#home" >Inicio</Nav.Link>
                             </Link>
-                            <Nav.Link href="#link">Dónde estamos?</Nav.Link>
+                            <Nav.Link>Dónde estamos?</Nav.Link>
                                 <NavDropdown title="Categorías" id="basic-nav-dropdown">
                                     <Link exact to="/categoria/tartas">
                                         <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
@@ -37,7 +40,7 @@ function NavBar() {
                                     <NavDropdown.Item href="#action/3.8">Macarons</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                 </NavDropdown>
-                                <CartWidget/>
+                                <CartWidget count={cantidad}/>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,21 +1,28 @@
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/Navbar'
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
-import { createContext } from 'react'
-import { useState } from 'react'
+import { useState, createContext } from 'react'
+import CartContextProvider from './context/cartContext'
+
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const ContextApp = createContext()
 
 
 function App() {
 
-  const [state, setstate] = useState(initialState)
+  const [state, setState] = useState({})
+
+  function setearState(producto) {
+    setState(producto)
+  }
+
   return (
-    <ContextApp.Provider value={state}>
+    <CartContextProvider>
+    <ContextApp.Provider value={{state, setearState}}>
       <BrowserRouter>     
         <div className="App">
 
@@ -38,7 +45,7 @@ function App() {
         </div>
       </BrowserRouter>
     </ ContextApp.Provider>
-
+    </CartContextProvider>
   );
 };
 
