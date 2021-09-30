@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchProducto } from './Productos'
+import { fetchProducto, fetchProductos } from './Productos'
 import ItemDetail from './ItemDetail'
 
 
@@ -14,7 +14,14 @@ const ItemDetailContainer = () => {
     
     }, [])
 
+    const [productos, setProductos] = useState({})
 
+    
+    useEffect(() => {
+        fetchProductos
+        .then(prod => prod.id === producto.id)
+        setProductos(productos, producto)
+    }, [])
     // const {productoId} = useParams()
 
 /*     useEffect(() => {
