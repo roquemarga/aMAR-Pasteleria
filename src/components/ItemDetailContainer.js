@@ -15,14 +15,14 @@ const ItemDetailContainer = () => {
     }, [])
 
     const [productos, setProductos] = useState({})
-
+    
+    // const {productoId} = useParams()
     
     useEffect(() => {
         fetchProductos
         .then(prod => prod.id === producto.id)
         setProductos(productos, producto)
     }, [])
-    // const {productoId} = useParams()
 
 /*     useEffect(() => {
         if(productoId) {
