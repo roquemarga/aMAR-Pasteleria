@@ -15,6 +15,17 @@ const ItemDetailContainer = () => {
     
     }, []) */
 
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        let timer = setTimeout(() => {
+                setLoading(loading)
+            }, 2000)
+        return () =>{ 
+            clearTimeout(timer)
+        }
+    }, [loading])
+
     const {productoId} = useParams()
 
     const [productos, setProductos] = useState([])

@@ -12,16 +12,21 @@ export default function CartContextProvider ({children}) {
     function addToCart (producto) {
         let verCart = [...cartList]
 
-        if(verCart.some(prod => prod.id === producto.id)) {
-            verCart.find(prod => prod.id === producto.id).cantidad += producto.cantidad
+        if(verCart.some(prod => prod.producto.id === producto.producto.id)) {
+            verCart.find(prod => prod.producto.id === producto.producto.id).cantidad += producto.cantidad
             setCartList(verCart)
         }else{
         setCartList([...cartList, producto])
         }
     }
     console.log(cartList)
+
+    function borrarList () {
+        cartList([])
+    }
+
     return(
-        <cartContext.Provider value= {{cartList, addToCart}}>
+        <cartContext.Provider value= {{cartList, addToCart, borrarList}}>
             {children}
         </cartContext.Provider>
     )

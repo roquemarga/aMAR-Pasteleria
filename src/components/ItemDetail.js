@@ -1,29 +1,26 @@
-import React from 'react'
-// import {useState, useContext} from "react"
-// import { ContextApp } from '../App';
-import ItemCount from './ItemCount';
-import { useCartContext } from '../context/cartContext';
+import React, { useContext } from 'react'
+import { ContextApp } from '../App'
+import ItemCount from './ItemCount'
+import { useCartContext } from '../context/cartContext'
 
 
 const ItemDetail= ({producto}) => {
 
     // const [cantidad, setCantidad] = useState(0);
+    const {addToCart} = useCartContext()
     
+    const {state} = useContext(ContextApp)
+
     const onAdd = (cantidad) => {
         // setCantidad(cantidad)
-        addToCart(producto, cantidad)
+        addToCart({producto: producto, cantidad: cantidad})
         console.log(cantidad, "en el carrito");
     }
-
-    const {addToCart} = useCartContext()
-
-    // const {state} = useContext(ContextApp)
 
     console.log(addToCart)
 
     return (
         <div>
-            {/* {state.map(producto => <p>{producto.nombre}</p>)} */}
             <img src= {producto?.foto} style={{ height: 300, weith: 150 }} alt="foto" className= "w-30 h-30"/>
             <h2>{producto?.nombre}</h2>
             <h4>{producto?.descrip}</h4>
