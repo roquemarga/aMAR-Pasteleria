@@ -24,10 +24,10 @@ const ItemDetail= ({producto}) => {
     return (
         <div>
             {/* {state.map(producto => <p>{producto.nombre}</p>)} */}
-            <img src= {producto.foto} style={{ height: 300, weith: 150 }} alt="foto" className= "w-30 h-30"/>
-            <h2>{producto.nombre}</h2>
-            <h4>{producto.descrip}</h4>
-            <h2>{producto.precio}</h2>
+            <img src= {producto?.foto} style={{ height: 300, weith: 150 }} alt="foto" className= "w-30 h-30"/>
+            <h2>{producto?.nombre}</h2>
+            <h4>{producto?.descrip}</h4>
+            <h2>{producto?.precio}</h2>
             <ItemCount stock={12} initial={1} onAdd={onAdd} />
         </div>
     )

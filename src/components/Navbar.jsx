@@ -22,14 +22,14 @@ function NavBar (props) {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Link exact to="/">
-                                <Nav.Link href="#home" >Inicio</Nav.Link>
+                                <Nav>Inicio</Nav>
                             </Link>
                             <Nav.Link>Dónde estamos?</Nav.Link>
                                 <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                                    <Link exact to="/categoria/tartas">
+                                    <Link to="/categoria/tartas">
                                         <NavDropdown.Item href="#action/3.1">Tartas</NavDropdown.Item>
                                     </Link>
-                                    <Link exact to="/categoria/tortas">
+                                    <Link to="/categoria/tortas">
                                         <NavDropdown.Item href="#action/3.2">Tortas</NavDropdown.Item>
                                     </Link>
                                     <NavDropdown.Item href="#action/3.3">Pattiserie</NavDropdown.Item>

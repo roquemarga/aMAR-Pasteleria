@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchProducto, fetchProductos } from './Productos'
+import { fetchProductos } from './Productos'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router'
 

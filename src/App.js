@@ -1,10 +1,10 @@
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Cart from './components/Cart'
-import { useState, createContext } from 'react'
 import CartContextProvider from './context/cartContext'
 import NavBar from "./components/Navbar"
+import {BrowserRouter, Switch, Route} from "react-router-dom"
+import { useState, createContext } from 'react'
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -36,7 +36,7 @@ function App() {
 
               <Route exact path="/categoria/:idCategoria" component={ItemListContainer}/>
 
-              <Route exact path="/detalle/:id" component= {ItemDetailContainer} />
+              <Route exact path="/detalle/:productoId" component= {ItemDetailContainer} />
 
               <Route exact path="/cart" component= {Cart} />
 
