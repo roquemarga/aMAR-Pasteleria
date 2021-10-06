@@ -28,10 +28,10 @@ const ItemDetailContainer = () => {
 
     const {productoId} = useParams()
 
-    const [productos, setProductos] = useState([])
+    const [producto, setProductos] = useState([])
 
     const getProductos = () => {
-        setProductos(fetchProductos[productos])
+        setProductos(fetchProductos[producto])
     }
 
     useEffect(() => {
@@ -71,7 +71,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail producto= {productoId}/>
+            <ItemDetail producto= {producto}/>
         </div>
     )
 }
