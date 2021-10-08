@@ -22,7 +22,7 @@ function NavBar (props) {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Link exact to="/">
-                                <Nav>Inicio</Nav>
+                                <Nav.Link href="#home">Inicio</Nav.Link>
                             </Link>
                             <Nav.Link>Dónde estamos?</Nav.Link>
                                 <NavDropdown title="Categorías" id="basic-nav-dropdown">

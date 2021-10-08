@@ -9,7 +9,7 @@ const ItemDetail= ({producto}) => {
     // const [cantidad, setCantidad] = useState(0);
     const {addToCart} = useCartContext()
     
-    const {state} = useContext(ContextApp)
+    // const {state} = useContext(ContextApp)
 
     const onAdd = (cantidad) => {
         // setCantidad(cantidad)
@@ -17,7 +17,7 @@ const ItemDetail= ({producto}) => {
         console.log(cantidad, "en el carrito");
     }
 
-    console.log(addToCart)
+    // console.log(addToCart)
 
     return (
         <div>

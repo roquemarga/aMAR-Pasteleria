@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { fetchProductos } from './Productos'
+import { useParams } from 'react-router-dom'
+import { fetchProducto } from './Productos'
 import ItemDetail from './ItemDetail'
-import { useParams } from 'react-router'
 
 
 const ItemDetailContainer = () => {
@@ -28,9 +28,21 @@ const ItemDetailContainer = () => {
 
     const {productoId} = useParams()
 
-    const [producto, setProductos] = useState([])
+    const [producto, setProducto] = useState(null)
 
-    const getProductos = () => {
+    let promesaProd = new Promise ((resp) => {
+        setTimeout(() => {
+            resp(fetchProducto(parseInt(productoId)))
+        })
+    })
+
+    useEffect(() => {
+        promesaProd
+        .then ((resp) => setProducto(resp))
+        
+    }, [])
+
+/*     const getProductos = () => {
         setProductos(fetchProductos[producto])
     }
 
@@ -38,7 +50,7 @@ const ItemDetailContainer = () => {
         getProductos()
     
     }, [])
-    
+     */
     // const {productoId} = useParams()
     
 /*     useEffect(() => {
