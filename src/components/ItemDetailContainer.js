@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchProducto } from './Productos'
 import ItemDetail from './ItemDetail'
+import { getFirestore } from '../services/getFirebase'
 
 
 const ItemDetailContainer = () => {
@@ -37,6 +38,14 @@ const ItemDetailContainer = () => {
     })
 
     useEffect(() => {
+
+        const extraerProdFb = getFirestore()
+        extraerProdFb.collection("productos").doc(productoId).get()
+        .then(resp => console.log(resp))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+
+
         promesaProd
         .then ((resp) => setProducto(resp))
         

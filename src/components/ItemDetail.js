@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { ContextApp } from '../App'
+import React from 'react'
 import ItemCount from './ItemCount'
 import { useCartContext } from '../context/cartContext'
 

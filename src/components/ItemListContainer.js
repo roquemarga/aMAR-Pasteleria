@@ -1,9 +1,9 @@
 import React from 'react'
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import {fetchProductos} from "./Productos"
 import ItemList from './ItemList'
-import { useEffect } from 'react'
 import {useParams} from "react-router-dom"
+import { getFirestore } from '../services/getFirebase'
 
 function ItemListContainer({greeting}) {
 
@@ -16,7 +16,18 @@ function ItemListContainer({greeting}) {
     
     useEffect(() => {
 
-        if(idCategoria) {
+        const extraerProdFb = getFirestore()
+        extraerProdFb.collection("productos").get()
+        .then(resp => {
+
+        setProductos(resp.docs.map(producto => ({id: producto.id, ...producto.data()} )))
+        
+        })
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+
+
+        /* if(idCategoria) {
             fetchProductos
             .then(respuesta => {
                 setProductos(respuesta.filter (prod => prod.categoria === idCategoria))
@@ -34,11 +45,11 @@ function ItemListContainer({greeting}) {
             .catch(error => console.log(error))
             .finally(()=> setLoading(false))
 
-        }
+        } */
         
     }, [idCategoria])
         
-    console.log(idCategoria)
+    // console.log(idCategoria)
 
     
     return (
