@@ -17,10 +17,16 @@ function ItemListContainer({greeting}) {
     useEffect(() => {
 
         const extraerProdFb = getFirestore()
-        extraerProdFb.collection("productos").get()
+
+        const newProdFb = idCategoria ? 
+                                extraerProdFb.collection("productos").where("categoria", "==" , idCategoria)
+                            :
+                                extraerProdFb.collection("productos")
+
+        newProdFb.get()                        
         .then(resp => {
 
-        setProductos(resp.docs.map(producto => ({id: producto.id, ...producto.data()} )))
+            setProductos(resp.docs.map(producto => ({id: producto.id, ...producto.data()} )))
         
         })
         .catch(error => console.log(error))

@@ -31,24 +31,24 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState(null)
 
-    let promesaProd = new Promise ((resp) => {
+/*     let promesaProd = new Promise ((resp) => {
         setTimeout(() => {
             resp(fetchProducto(parseInt(productoId)))
         })
-    })
+    }) */
 
     useEffect(() => {
 
         const extraerProdFb = getFirestore()
         extraerProdFb.collection("productos").doc(productoId).get()
-        .then(resp => console.log(resp))
+        .then(resp => setProducto({productoId , ...resp.data()}))
         .catch(error => console.log(error))
-        .finally(() => setLoading(false))
+        // .finally(() => setLoading(false))
 
 
-        promesaProd
+/*         promesaProd
         .then ((resp) => setProducto(resp))
-        
+     */    
     }, [])
 
 /*     const getProductos = () => {
