@@ -1,9 +1,11 @@
-import React from 'react'
 import {useState, useEffect} from "react"
-import {fetchProductos} from "./Productos"
-import ItemList from './ItemList'
 import {useParams} from "react-router-dom"
+
 import { getFirestore } from '../services/getFirebase'
+import 'firebase/firestore'
+
+import Container  from 'react-bootstrap/Container'
+import ItemList from './ItemList'
 
 function ItemListContainer({greeting}) {
 
@@ -33,35 +35,18 @@ function ItemListContainer({greeting}) {
         .finally(() => setLoading(false))
 
 
-        /* if(idCategoria) {
-            fetchProductos
-            .then(respuesta => {
-                setProductos(respuesta.filter (prod => prod.categoria === idCategoria))
-    
-            })
-            .catch(error => console.log(error))
-            .finally(()=> setLoading(false))
 
-        }else{
-            fetchProductos
-            .then(respuesta => {
-                setProductos(respuesta)
-    
-            })
-            .catch(error => console.log(error))
-            .finally(()=> setLoading(false))
-
-        } */
         
     }, [idCategoria])
         
-    // console.log(idCategoria)
 
     
     return (
         <div>
-            <h2>{greeting}</h2>
-            {loading ? <div>Cargando</div> : <ItemList productos={productos} />}
+            <Container fluid className="d-flex row justify-content-center m-0 pt-3">
+            <h2 className="fst-italic">{greeting}</h2>
+            {loading ? <div className="text-center shadow border-5 m-2 fst-italic">Cargando</div> : <ItemList productos={productos} />}
+            </Container>
         </div>
     )
 }
