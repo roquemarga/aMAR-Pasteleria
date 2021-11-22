@@ -14,7 +14,7 @@ import 'firebase/firestore'
 
 const CartForm = () => {
     const [ formData, setFormData ] = useState({
-        nombre: '',
+        name: '',
         tel: '',
         email: ''
     })
@@ -23,12 +23,13 @@ const CartForm = () => {
 
     const [idVenta, setIdVenta] = useState('')
 
-    const {carList, totalAPagar} = useCartContext()
+    const {cartList, totalAPagar} = useCartContext()
 
 
         
     const handleOnSubmit = (e) =>{        
         e.preventDefault()        
+        
         let venta = {}
 
         venta.fecha = firebase.firestore.Timestamp.fromDate( new Date() );
@@ -37,7 +38,7 @@ const CartForm = () => {
         
         venta.total = totalAPagar;
         
-        venta.productos = carList.map(cartItem => {
+        venta.productos = cartList.map(cartItem => {
             const id = cartItem.producto.id;
             const title = cartItem.producto.title;
             const precio = cartItem.producto.precio * cartItem.cantidad;
@@ -46,20 +47,21 @@ const CartForm = () => {
         })
         
         
+        
         const db = getFirestore()
         db.collection('ventas').add(venta)
         .then(resp => setIdVenta(resp.id))
         .catch(err=> console.log(err))
         .finally(()=>
             setFormData({
-                nombre: '',
+                name: '',
                 tel: '',
                 email: ''
             }) 
         )            
             
         const actualizarProductos = db.collection('productos').where(
-            firebase.firestore.FieldPath.documentId(), 'in', carList.map(i=> i.producto.id)
+            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.producto.producto.id)
         )
             
         const batch = db.batch();
@@ -68,7 +70,7 @@ const CartForm = () => {
         .then( collection=>{
             collection.docs.forEach(docSnapshot => {
                 batch.update(docSnapshot.ref, {
-                    stock: docSnapshot.data().stock - carList.find(producto => producto.producto.id === docSnapshot.id).cantidad
+                    stock: docSnapshot.data().stock - cartList.find(producto => producto.producto.id === docSnapshot.id).cantidad
                 })
             })
 
@@ -86,9 +88,9 @@ const CartForm = () => {
 
         setFormData({
             ...formData,
-            [e.target.nombre]: e.target.value
+            [e.target.name]: e.target.value
         })
-        
+        console.log(formData)
 
     }
 
@@ -101,13 +103,13 @@ return (
             <Form onChange={handleOnChange} onSubmit={handleOnSubmit} className="container text-center py-4 w-75">
                 <Row>
                     <Col>
-                        <Form.Control type="text" nombre="nombre" className="fw-light m-4" placeholder="Nombre y Apellido" defaultValue={formData.nombre}/>
+                        <Form.Control type="text" name="name" className="fw-light m-4" placeholder="Nombre y Apellido" defaultValue={formData.name}/>
                     </Col>
                     <Col>
-                        <Form.Control type="email" nombre='email' className="fw-light m-4" placeholder="Email" defaultValue={formData.email}/>
+                        <Form.Control type="text" name='email' className="fw-light m-4" placeholder="Email" defaultValue={formData.email}/>
                     </Col>
                 </Row>
-                <Form.Control type="text" nombre="tel" className="fw-light m-4" placeholder="Teléfono o celular" defaultValue={formData.tel} />
+                <Form.Control type="text" name="tel" className="fw-light m-4" placeholder="Teléfono o celular" defaultValue={formData.tel} />
                 <Row>
                     <Col>
                         <p className="m-0 mb-0 fw-bold fst-italic">Total a pagar: ${totalAPagar}</p>

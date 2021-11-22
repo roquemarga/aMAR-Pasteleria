@@ -40,14 +40,14 @@ const Cart = () => {
                         <tbody>
                         {cartList.map(prodEnCarrito => 
                             <tr key={prodEnCarrito.id}>                    
-                                <td className="fw-light">{prodEnCarrito.nombre}</td>
+                                <td className="fw-light">{prodEnCarrito.producto.nombre}</td>
                                 <td className="h5">
                                 <Button variant="warning" className="me-3 py-0 border-black tableHide" onClick={(e) => restarProd(prodEnCarrito, e)}>-</Button>
                                     {prodEnCarrito.cantidad}
                                 <Button variant="warning" className="ms-3 py-0 border-black tableHide" onClick={(e) => sumarProd(prodEnCarrito, e)}>+</Button>
                                 </td>
-                                <td className="tableHide fw-light">{prodEnCarrito.stock}</td>
-                                <td className="tableHide fw-light">${prodEnCarrito.precio}</td>
+                                <td className="tableHide fw-light">{prodEnCarrito.producto.stock}</td>
+                                <td className="tableHide fw-light">${prodEnCarrito.producto.precio}</td>
                                 <td className="fw-light">$ {prodEnCarrito.cantidad * prodEnCarrito.precio}</td>
                                 <td className="bg-danger" ><CloseButton onClick={(e) => borrarProd(prodEnCarrito, e)} aria-label="Hide" variant="light"/></td>
                             </tr>
