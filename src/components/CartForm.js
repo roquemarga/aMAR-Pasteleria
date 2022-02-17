@@ -39,16 +39,17 @@ const CartForm = () => {
         venta.total = totalAPagar;
         
         venta.productos = cartList.map(cartItem => {
-            const id = cartItem.producto.id;
-            const title = cartItem.producto.title;
-            const precio = cartItem.producto.precio * cartItem.cantidad;
-            
+            const id = cartItem.producto;
+            const title = cartItem.nombre;
+            const precio = cartItem.precio * cartItem.cantidad;
+
             return {id, title, precio}   
         })
         
         
         
         const db = getFirestore()
+        console.log(venta)
         db.collection('ventas').add(venta)
         .then(resp => setIdVenta(resp.id))
         .catch(err=> console.log(err))
@@ -59,18 +60,17 @@ const CartForm = () => {
                 email: ''
             }) 
         )            
-            
         const actualizarProductos = db.collection('productos').where(
-            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.producto.producto.id)
-        )
-            
+            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.producto)
+        );
+        
         const batch = db.batch();
                     
         actualizarProductos.get()
         .then( collection=>{
             collection.docs.forEach(docSnapshot => {
                 batch.update(docSnapshot.ref, {
-                    stock: docSnapshot.data().stock - cartList.find(producto => producto.producto.id === docSnapshot.id).cantidad
+                    stock: docSnapshot.data().stock - cartList.find(producto => producto.producto === docSnapshot.id).cantidad
                 })
             })
 
