@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arima Madurai", cursive;  
+}
+
+.fondoGeneral {
+    background-image: url('https://images.pexels.com/photos/5196226/pexels-photo-5196226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: repeat;
+    background-size:  1366px 768px; 
+    backdrop-filter: blur(3px); 
+    filter: brightness(90%);
+}
+
+.container {
+    backdrop-filter: blur(3px); 
+    filter: brightness(90%);
+}
+
+nav {
+    height: 6.25rem;
+    width: 100%;
+    background-color: transparent !important;
+    }
+
+.navbar__estilos {
+    margin: 20px;
+    padding: 5px;
+    font-family: "Unica One", cursive;
+    font-size: 17px;
+    color: #cca581;
+    
+}
+
+.navbar__estilos--logo {
+    font-style: bold;
+    color: #fcf269;
+    text-shadow: 2px 2px black;
+    font-size: 30px;
+}
+
+nav .navbar-collapse {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+}
+
+nav input > .form-control me-2 {
+    margin: 7px;
+}
+
+.presentacion__palabras {
+    color: #fcf269;
+    font-weight: normal;
+    font-size: 50px;
+    font-family: "Unica One", cursive;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px black;
+}
+
+.texto-mediano {
+    font-size: 18px;
+    padding-top: 20px;
+    text-align: center;
+    color: #cca581;
+    text-shadow: 2px 0px black;
+    padding-bottom: 80px;
+}
+
+.texto-sm {
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #cca581;
+    text-shadow: 2px 0px black;
+}
+
+main .inspirate__img {
+    background-image: url("https://images.pexels.com/photos/7664696/pexels-photo-7664696.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    position: relative;
+    height: 12.5rem;
+    width: 100%;
+    /* padding-top: 60px; */
+}
+
+main .inspirate__img .inspirate__text {
+    background-color: rgba(255, 255, 255, 0.815);
+    color: black;
+    font-size: 5vw;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    font-family: "Sarabun", sans-serif;
+}
+
+main .inspirate__img--colec {
+    height: 10.5rem;
+}
+
+main .inspirate__text--colec {
+    font-size: 3vw !important;
+}
+
+main .inspirate__img--origen {
+    height: 7.5rem;
+}
+
+main .galeria__imagenes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  main .galeria__imagenes .imagenes__muestras {
+    width: 100%;
+    height: 15.375rem !important;
+    margin: 10px;
+  }
+  
+  main .galeria__imagenes .imagenes__muestras:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
+  
+  main .galeria__imagenes--muestras {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  
+  main .boton__porfolio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  main .btn {
+    font-family: "Unica One", cursive;
+    background-color: #ffdb70;
+    margin-top: 30px;
+  }
+
+  main .card {
+    position: relative;
+    overflow: hidden;
+    max-height: 600px;
+  }
+  
+  main .card .cardText {
+    font-family: "Unica One", cursive;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #ffc823;
+    text-shadow: 2px 2px black;
+  }
+  
+  main .card img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+  }
+  
+  main .card:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-filter: brightness(0.4);
+            filter: brightness(0.4);
+  }
+
+  footer {
+    height: 14.25rem;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 5.25rem;
+  }
+  
+  footer .info__suscrip {
+    padding-left: 40px;
+    margin-bottom: 30px;
+  }
+  
+  footer .fuente-footer {
+    font-family: "Unica One", cursive;
+    font-weight: 650;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  footer .fuente-footer--correo {
+    font-size: 15px;
+    text-align: center;
+    font-family: "Unica One", cursive;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  
+  footer .correo-footer {
+    margin-top: 10px;
+    width: 18.75rem;
+  }
+  
+  footer .redes-footer {
+    margin-top: 10px;
+  }
+  
+  footer .redes-footer--botones {
+    margin-left: 28px;
+  }
+  
+  footer .copy-footer {
+    margin-top: 90px;
+    margin-left: 340px;
+  }
+  
+  footer .btn {
+      width: 40px;
+      background-color: #cca581;
+    }
+    
+    footer .btn-enviar {
+    font-family: "Unica One", cursive;
+    width: 4.25rem;
+    background-color: #cca581;
+    color: #f8f1f1;
+    border-radius: 5px;
+    font-style: none;
+    margin-top: 38px;
+    height: 2.3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  
+  footer .bg-1 {
+    background: #ffdb70b0;
+    height: 104vh;
+    padding-top: 30px;
+    width: 100%;
+  }
